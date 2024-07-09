@@ -26,5 +26,10 @@ return {
 
     ---@type lc.lang
     lang = "python3",
+
+    keys = {
+      ---@type string
+      reset_testcases = "R"
+    }
   },
 }
