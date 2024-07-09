@@ -51,9 +51,9 @@ return {
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[f]ind [h]elp' })
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[f]ind [k]eymaps' })
     vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[f]ind [s]electors (telescope)' })
-    vim.keymap.set('n', '<leader>sn', function()
+    vim.keymap.set('n', '<leader>fn', function()
       builtin.find_files { cwd = vim.fn.stdpath 'config' }
-    end, { desc = '[S]earch [N]eovim files' })
+    end, { desc = '[f]ind [n]eovim files' })
 
     -- git
     vim.keymap.set("n", "<leader>fGc", builtin.git_commits, { desc = "[f]ind [G]it [c]ommits" })
