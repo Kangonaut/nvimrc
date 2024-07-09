@@ -51,6 +51,7 @@ return {
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[f]ind [h]elp' })
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[f]ind [k]eymaps' })
     vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[f]ind [s]electors (telescope)' })
+    vim.keymap.set("n", "<leader>fC", builtin.commands, { desc = "[f]ind [c]ommands" })
     vim.keymap.set('n', '<leader>fn', function()
       builtin.find_files { cwd = vim.fn.stdpath 'config' }
     end, { desc = '[f]ind [n]eovim files' })
