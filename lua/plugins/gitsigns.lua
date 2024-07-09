@@ -1,10 +1,9 @@
--- Here is a more advanced example where we pass configuration
--- options to `gitsigns.nvim`. This is equivalent to the following Lua:
---    require('gitsigns').setup({ ... })
---
--- See `:help gitsigns` to understand what the configuration keys do
+-- [[ gitsigns.nvim ]]
+-- desc: git decorations (to highlight changes) and utilities
+-- repo: https://github.com/lewis6991/gitsigns.nvim
+
 return {
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  {
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -67,4 +66,3 @@ return {
     },
   },
 }
--- vim: ts=2 sts=2 sw=2 et
