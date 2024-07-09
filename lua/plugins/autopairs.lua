@@ -1,5 +1,6 @@
 -- autopairs
--- https://github.com/windwp/nvim-autopairs
+-- desc: automatically add closing pair for e.g.: (, [, {, ", ', ...
+-- repo: https://github.com/windwp/nvim-autopairs
 
 return {
   'windwp/nvim-autopairs',
