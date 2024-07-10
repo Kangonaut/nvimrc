@@ -2,6 +2,8 @@
 -- desc: automated session manager for Neovim
 -- repo: https://github.com/rmagatti/auto-session
 
+return {}
+
 -- return {
 --   {
 --     "rmagatti/auto-session",
