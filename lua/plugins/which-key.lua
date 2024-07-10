@@ -26,6 +26,7 @@ return {
         ["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
         ["<leader>t"] = { name = "[T]oggle", _ = "which_key_ignore" },
         ["<leader>h"] = { name = "Git [H]unk", _ = "which_key_ignore" },
+        ["<leader>p"] = { name = "[p]ython", _ = "which_key_ignore" },
         ["<leader>b"] = {
           name = "[B]uffer",
           _ = "which_key_ignore",
