@@ -32,7 +32,8 @@ return {
 
       -- visual mode
       require("which-key").register({
-        ["<leader>h"] = { "git [h]unk" },
+        ["<leader>h"] = { "git [h]unk", _ = "which_key_ignore" },
+        ["<leader>f"] = { name = "[f]ind", _ = "which_key_ignore" },
       }, { mode = "v" })
     end,
   },

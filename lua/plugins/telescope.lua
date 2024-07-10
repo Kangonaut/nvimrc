@@ -73,5 +73,8 @@ return {
     vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
       { desc = "[b]uffers" })
     vim.keymap.set("n", "<leader>fc", builtin.current_buffer_fuzzy_find, { desc = "[c]urrent buffer contents" })
+
+    -- visual selection
+    vim.keymap.set("v", "<leader>fs", builtin.grep_string, { desc = "[s]election" })
   end,
 }
