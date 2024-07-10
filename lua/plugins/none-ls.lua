@@ -24,6 +24,9 @@ return {
 
         -- Ansible
         null_ls.builtins.diagnostics.ansiblelint,
+
+        -- Spelling
+        null_ls.builtins.diagnostics.codespell, -- fix common spelling mistakes
       },
     })
 

@@ -40,6 +40,9 @@ local tools = {
 
   -- Ansible
   "ansible-lint",
+
+  -- Spelling
+  "codespell",
 }
 
 return {
