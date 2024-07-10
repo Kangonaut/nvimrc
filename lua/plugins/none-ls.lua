@@ -13,11 +13,12 @@ return {
       -- NOTE: don't forget to install these sources using mason first (by adding them to the `ensure_installed` property)
       sources = {
         -- Lua
-        null_ls.builtins.formatting.stylua, -- Lua formatter
+        null_ls.builtins.formatting.stylua,
 
         -- Python
+        null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.diagnostics.ruff,
         null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.isort,
       },
     })
 

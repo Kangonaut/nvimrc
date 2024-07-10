@@ -16,8 +16,9 @@ local tools = {
   "stylua",
 
   -- Python
+  "mypy",
+  "ruff",
   "black",
-  "isort",
 }
 
 return {
@@ -87,8 +88,28 @@ return {
           vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "hover documentation" })
 
           -- [[ configure autocommands ]]
-          -- highlight references of the word under your cursor when it rests there for a little while
           local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+          -- configure format on save
+          if client and client.supports_method("textDocument/formatting") then
+            local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+            local bufnr = vim.tbl_keys(client.attached_buffers)[0]
+
+            vim.api.nvim_clear_autocmds({
+              group = augroup,
+              buffer = bufnr,
+            })
+
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              group = augroup,
+              buffer = bufnr,
+              callback = function()
+                vim.lsp.buf.format({ bufnr = bufnr })
+              end,
+            })
+          end
+
+          -- highlight references of the word under your cursor when it rests there for a little while
           if client and client.server_capabilities.documentHighlightProvider then
             local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
 
@@ -103,6 +124,7 @@ return {
             vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
               buffer = event.buf,
               group = highlight_augroup,
+
               callback = vim.lsp.buf.clear_references,
             })
 
