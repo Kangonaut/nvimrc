@@ -27,6 +27,9 @@ return {
 
         -- Spelling
         null_ls.builtins.diagnostics.codespell, -- fix common spelling mistakes
+
+        -- Markdown
+        null_ls.builtins.diagnostics.markdownlint,
       },
     })
 

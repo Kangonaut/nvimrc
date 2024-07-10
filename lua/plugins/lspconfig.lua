@@ -43,6 +43,9 @@ local tools = {
 
   -- Spelling
   "codespell",
+
+  -- Markdown
+  "markdownlint",
 }
 
 return {
