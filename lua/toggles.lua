@@ -12,4 +12,4 @@ vim.keymap.set("n", "<leader>tl", function()
   else
     vim.notify("enabled relative line numbers")
   end
-end, { desc = "line numbers" })
+end, { desc = "[l]ine numbers" })
