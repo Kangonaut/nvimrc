@@ -62,7 +62,7 @@ return {
           ["<C-z>"] = cmp.mapping.confirm({ select = true }),
 
           -- Manually trigger a completion from nvim-cmp.
-          ["<C-I>"] = cmp.mapping.complete({}),
+          ["<C-^>"] = cmp.mapping.complete({}),
 
           -- Think of <c-l> as moving to the right of your snippet expansion.
           --  So if you have a snippet that's like:
