@@ -9,6 +9,13 @@ local servers = {
       },
     },
   },
+  tsserver = {
+    init_options = {
+      preferences = {
+        disableSuggestions = true,
+      },
+    },
+  },
 }
 
 local tools = {
@@ -19,6 +26,9 @@ local tools = {
   "mypy",
   "ruff",
   "black",
+
+  -- TS/JS
+  "prettier",
 }
 
 return {
