@@ -5,5 +5,5 @@
 -- INFO: automatically adjusts `shiftwidth` and `expandtab` based on the curren file
 
 return {
-  'tpope/vim-sleuth',
+  "tpope/vim-sleuth",
 }

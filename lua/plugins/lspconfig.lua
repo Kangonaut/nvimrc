@@ -4,7 +4,7 @@ local servers = {
     settings = {
       Lua = {
         completion = {
-          callSnippet = 'Replace',
+          callSnippet = "Replace",
         },
       },
     },
@@ -32,7 +32,7 @@ return {
         -- [[ mason-tool-installer.nvim ]]
         -- desc: install and upgrade third party tools automatically
         -- repo: https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
-        'WhoIsSethDaniel/mason-tool-installer.nvim',
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
       },
       {
         -- [[ fidget.nvim ]]
@@ -53,8 +53,8 @@ return {
       -- [[ configure what happens when LSP attaches ]]
       -- triggered when an LSP attaches to a particular buffer
       -- this happens when the file is associated with an LSP server
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
         callback = function(event)
           local builtin = require("telescope.builtin")
 
@@ -81,28 +81,28 @@ return {
           -- highlight references of the word under your cursor when it rests there for a little while
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then
-            local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+            local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
 
             -- highlight references
-            vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+            vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
               buffer = event.buf,
               group = highlight_augroup,
               callback = vim.lsp.buf.document_highlight,
             })
 
             -- clear references when cursor moves again
-            vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+            vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
               buffer = event.buf,
               group = highlight_augroup,
               callback = vim.lsp.buf.clear_references,
             })
 
             -- clear highlights and autocommands when the LSP server detaches
-            vim.api.nvim_create_autocmd('LspDetach', {
-              group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
+            vim.api.nvim_create_autocmd("LspDetach", {
+              group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
               callback = function(event2)
                 vim.lsp.buf.clear_references()
-                vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
+                vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
               end,
             })
           end
@@ -119,7 +119,7 @@ return {
       -- [[ configure LSP ]]
       -- extend Neovim's basic capabilities with those that come with nvim-cmp, luasnip, ...
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
       -- setup mason
       require("mason").setup()
@@ -128,12 +128,12 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
 
       -- setup mason-tool-installer
-      require("mason-tool-installer").setup {
+      require("mason-tool-installer").setup({
         ensure_installed = ensure_installed,
-      }
+      })
 
       -- setup mason-lspconfig
-      require('mason-lspconfig').setup {
+      require("mason-lspconfig").setup({
         handlers = {
           -- configure LSP servers
           function(server_name)
@@ -141,13 +141,13 @@ return {
             local server = servers[server_name] or {}
 
             -- extend default capabilities
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+            server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 
             -- setup LSP server
-            require('lspconfig')[server_name].setup(server)
+            require("lspconfig")[server_name].setup(server)
           end,
         },
-      }
+      })
     end,
   },
 }

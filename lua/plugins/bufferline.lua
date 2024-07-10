@@ -7,7 +7,7 @@ return {
   version = "*",
   event = "VeryLazy",
   dependencies = {
-    "nvim-tree/nvim-web-devicons"
+    "nvim-tree/nvim-web-devicons",
   },
   opts = {
     options = {
@@ -20,8 +20,8 @@ return {
           highlight = "tree",
           separator = true,
         },
-      }
-    }
+      },
+    },
   },
   config = function(_, opts)
     require("bufferline").setup(opts)
@@ -29,11 +29,9 @@ return {
     -- fix bufferline when restoring a session
     vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete" }, {
       callback = function()
-        vim.schedule(
-          function()
-            pcall(nvim_bufferline)
-          end
-        )
+        vim.schedule(function()
+          pcall(nvim_bufferline)
+        end)
       end,
     })
 
