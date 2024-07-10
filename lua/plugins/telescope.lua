@@ -22,7 +22,7 @@ return {
       end,
     },
     { "nvim-telescope/telescope-ui-select.nvim" },
-    { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+    { "nvim-tree/nvim-web-devicons",            enabled = vim.g.have_nerd_font },
   },
   config = function()
     -- Two important keymaps to use while in Telescope are:
@@ -70,7 +70,8 @@ return {
     vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[f]ind [d]iagnostics" })
     vim.keymap.set("n", "<leader>fR", builtin.resume, { desc = "[f]ind [R]esume" })
     vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "[f]ind [r]ecent Files" })
-    vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[f]ind [b]uffers" })
+    vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
+      { desc = "[f]ind [b]uffers" })
     vim.keymap.set("n", "<leader>fc", builtin.current_buffer_fuzzy_find, { desc = "[f]ind in [c]urrent buffer" })
   end,
 }
