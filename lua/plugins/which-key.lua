@@ -16,28 +16,23 @@ return {
         ["<leader>f"] = {
           name = "[f]ind",
           _ = "which_key_ignore",
-
           ["G"] = { name = "[G]it", _ = "which_key_ignore" },
         },
-        ["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-        ["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-        ["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-        ["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-        ["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-        ["<leader>t"] = { name = "[T]oggle", _ = "which_key_ignore" },
-        ["<leader>h"] = { name = "Git [H]unk", _ = "which_key_ignore" },
+        ["<leader>c"] = { name = "[c]ode", _ = "which_key_ignore" },
+        ["<leader>t"] = { name = "[t]oggle", _ = "which_key_ignore" },
+        ["<leader>h"] = { name = "git [h]unk", _ = "which_key_ignore" },
         ["<leader>p"] = { name = "[p]ython", _ = "which_key_ignore" },
         ["<leader>b"] = {
-          name = "[B]uffer",
+          name = "[b]uffer",
           _ = "which_key_ignore",
-
-          ["c"] = { name = "[B]uffer [C]lose", _ = "which_key_ignore" },
+          ["c"] = { name = "[c]lose", _ = "which_key_ignore" },
+          ["s"] = { name = "[s]elect", _ = "which_key_ignore" },
         },
       })
 
       -- visual mode
       require("which-key").register({
-        ["<leader>h"] = { "Git [H]unk" },
+        ["<leader>h"] = { "git [h]unk" },
       }, { mode = "v" })
     end,
   },

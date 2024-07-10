@@ -25,6 +25,6 @@ return {
     })
 
     -- [[ configure keymaps ]]
-    vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "[c]ode [f]ormat" })
+    vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "[f]ormat" })
   end,
 }

@@ -48,30 +48,30 @@ return {
 
     -- [[ configure keymaps ]]
     -- neovim
-    vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[f]ind [h]elp" })
-    vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[f]ind [k]eymaps" })
-    vim.keymap.set("n", "<leader>fs", builtin.builtin, { desc = "[f]ind [s]electors (telescope)" })
-    vim.keymap.set("n", "<leader>fC", builtin.commands, { desc = "[f]ind [c]ommands" })
+    vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[h]elp" })
+    vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[k]eymaps" })
+    vim.keymap.set("n", "<leader>fs", builtin.builtin, { desc = "[s]electors (telescope)" })
+    vim.keymap.set("n", "<leader>fC", builtin.commands, { desc = "[c]ommands" })
     vim.keymap.set("n", "<leader>fn", function()
       builtin.find_files({ cwd = vim.fn.stdpath("config") })
-    end, { desc = "[f]ind [n]eovim files" })
+    end, { desc = "[n]eovim files" })
 
     -- git
-    vim.keymap.set("n", "<leader>fGc", builtin.git_commits, { desc = "[f]ind [G]it [c]ommits" })
-    vim.keymap.set("n", "<leader>fGs", builtin.git_commits, { desc = "[f]ind [G]it [s]tatus" })
+    vim.keymap.set("n", "<leader>fGc", builtin.git_commits, { desc = "[c]ommits" })
+    vim.keymap.set("n", "<leader>fGs", builtin.git_commits, { desc = "[s]tatus" })
 
     -- linux
-    vim.keymap.set("n", "<leader>fm", builtin.man_pages, { desc = "[f]ind [m]an page" })
+    vim.keymap.set("n", "<leader>fm", builtin.man_pages, { desc = "[m]an page" })
 
     -- files & buffers
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[f]ind [f]iles" })
-    vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[f]ind [w]ord under cursor (root dir)" })
-    vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[f]ind [g]rep (root dir)" })
-    vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[f]ind [d]iagnostics" })
-    vim.keymap.set("n", "<leader>fR", builtin.resume, { desc = "[f]ind [R]esume" })
-    vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "[f]ind [r]ecent Files" })
+    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[f]iles" })
+    vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[w]ord under cursor (root dir)" })
+    vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[g]rep (root dir)" })
+    vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[d]iagnostics" })
+    vim.keymap.set("n", "<leader>fR", builtin.resume, { desc = "[R]esume" })
+    vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "[r]ecent files" })
     vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
-      { desc = "[f]ind [b]uffers" })
-    vim.keymap.set("n", "<leader>fc", builtin.current_buffer_fuzzy_find, { desc = "[f]ind in [c]urrent buffer" })
+      { desc = "[b]uffers" })
+    vim.keymap.set("n", "<leader>fc", builtin.current_buffer_fuzzy_find, { desc = "[c]urrent buffer contents" })
   end,
 }

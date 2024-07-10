@@ -80,19 +80,19 @@ return {
 
           -- [[ configure keymaps ]]
           -- goto's
-          vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "[g]oto [d]efinition" })
-          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "[g]oto [D]efinition" })
-          vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "[g]oto [r]eferences" })
-          vim.keymap.set("n", "gI", builtin.lsp_implementations, { desc = "[g]oto [I]mplementations" })
-          vim.keymap.set("n", "gy", builtin.lsp_type_definitions, { desc = "[g]oto t[y]pe definition" })
+          vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "[d]efinition" })
+          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "[D]efinition" })
+          vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "[r]eferences" })
+          vim.keymap.set("n", "gI", builtin.lsp_implementations, { desc = "[I]mplementations" })
+          vim.keymap.set("n", "gy", builtin.lsp_type_definitions, { desc = "t[y]pe definition" })
 
           -- symbols
-          vim.keymap.set("n", "<leader>cs", builtin.lsp_document_symbols, { desc = "[c]ode [s]ymbols (current buffer)" })
-          vim.keymap.set("n", "<leader>cS", builtin.lsp_dynamic_workspace_symbols, { desc = "[c]ode [s]ymbols (entire workspace)" })
+          vim.keymap.set("n", "<leader>cs", builtin.lsp_document_symbols, { desc = "[s]ymbols (current buffer)" })
+          vim.keymap.set("n", "<leader>cS", builtin.lsp_dynamic_workspace_symbols, { desc = "[S]ymbols (entire workspace)" })
 
           -- code actions
-          vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[c]ode [r]ename" })
-          vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[c]ode [a]ctions" })
+          vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[r]ename" })
+          vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[a]ctions" })
 
           -- documentation
           vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "hover documentation" })

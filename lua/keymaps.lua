@@ -49,4 +49,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- buffers
-vim.keymap.set("n", "<leader>bcc", "<cmd>bd<cr>", { desc = "[b]uffer [c]lose [c]urrent" })
+vim.keymap.set("n", "<leader>bcc", "<cmd>bd<cr>", { desc = "[c]urrent" })
