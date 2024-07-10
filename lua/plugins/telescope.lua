@@ -58,7 +58,7 @@ return {
 
     -- git
     vim.keymap.set("n", "<leader>fGc", builtin.git_commits, { desc = "[c]ommits" })
-    vim.keymap.set("n", "<leader>fGs", builtin.git_commits, { desc = "[s]tatus" })
+    vim.keymap.set("n", "<leader>fGs", builtin.git_status, { desc = "[s]tatus" })
 
     -- linux
     vim.keymap.set("n", "<leader>fm", builtin.man_pages, { desc = "[m]an page" })
