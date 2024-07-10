@@ -11,10 +11,6 @@ local servers = {
   },
 }
 
-local tools = {
-  "stylua"
-}
-
 return {
   {
     "neovim/nvim-lspconfig",
@@ -130,9 +126,6 @@ return {
 
       -- build ensure installed from server table
       local ensure_installed = vim.tbl_keys(servers or {})
-
-      -- extend with tools
-      vim.list_extend(ensure_installed, tools)
 
       -- setup mason-tool-installer
       require("mason-tool-installer").setup {
