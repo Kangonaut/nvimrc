@@ -21,6 +21,9 @@ return {
 
         -- JS/TS
         null_ls.builtins.formatting.prettier,
+
+        -- Ansible
+        null_ls.builtins.diagnostics.ansiblelint,
       },
     })
 

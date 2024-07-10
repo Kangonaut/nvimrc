@@ -1,5 +1,5 @@
 local servers = {
-  pyright = {},
+  -- Lua
   lua_ls = {
     settings = {
       Lua = {
@@ -9,6 +9,11 @@ local servers = {
       },
     },
   },
+
+  -- Python
+  pyright = {},
+
+  -- TS/JS
   tsserver = {
     init_options = {
       preferences = {
@@ -16,6 +21,9 @@ local servers = {
       },
     },
   },
+
+  -- Ansible
+  ansiblels = {},
 }
 
 local tools = {
@@ -29,6 +37,9 @@ local tools = {
 
   -- TS/JS
   "prettier",
+
+  -- Ansible
+  "ansible-lint",
 }
 
 return {
