@@ -44,7 +44,7 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = { completeopt = "menu,menuone,noinsert,noselect" },
+        completion = { completeopt = "menu,menuone,noinsert" },
 
         mapping = cmp.mapping.preset.insert({
           -- Select the [n]ext item
@@ -60,14 +60,7 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
 
           -- confirm selection
-          ["<CR>"] = cmp.mapping.confirm(),
-
-          -- normal carriage return without confirm selection
-          ["<C-CR>"] = function(fallback)
-            vim.notify("C-CR", "info")
-            cmp.abort()
-            fallback()
-          end,
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
           -- Manually trigger a completion from nvim-cmp.
           ["<C-^>"] = cmp.mapping.complete({}),
