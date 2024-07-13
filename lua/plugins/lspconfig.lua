@@ -22,6 +22,10 @@ local servers = {
     },
   },
 
+  -- HTML / CSS
+  ["html-lsp"] = {},
+  ["tailwindcss-language-server"] = {},
+
   -- Ansible
   ansiblels = {},
 }
