@@ -16,20 +16,13 @@ return {
         null_ls.builtins.formatting.stylua,
 
         -- Python
-        -- null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.formatting.black,
-
-        -- JS/TS
-        null_ls.builtins.formatting.prettier,
-
-        -- Ansible
-        null_ls.builtins.diagnostics.ansiblelint,
 
         -- Spelling
         null_ls.builtins.diagnostics.codespell, -- fix common spelling mistakes
 
         -- Markdown
-        null_ls.builtins.diagnostics.markdownlint,
+        null_ls.builtins.formatting.markdownlint,
       },
     })
 

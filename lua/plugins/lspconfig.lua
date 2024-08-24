@@ -9,25 +9,6 @@ local servers = {
       },
     },
   },
-
-  -- Python
-  pyright = {},
-
-  -- TS/JS
-  tsserver = {
-    init_options = {
-      preferences = {
-        disableSuggestions = true,
-      },
-    },
-  },
-
-  -- HTML / CSS
-  ["html-lsp"] = {},
-  ["tailwindcss-language-server"] = {},
-
-  -- Ansible
-  ansiblels = {},
 }
 
 local tools = {
@@ -35,15 +16,7 @@ local tools = {
   "stylua",
 
   -- Python
-  "mypy",
-  "ruff",
   "black",
-
-  -- TS/JS
-  "prettier",
-
-  -- Ansible
-  "ansible-lint",
 
   -- Spelling
   "codespell",
@@ -109,8 +82,7 @@ return {
 
           -- symbols
           vim.keymap.set("n", "<leader>cs", builtin.lsp_document_symbols, { desc = "[s]ymbols (current buffer)" })
-          vim.keymap.set("n", "<leader>cS", builtin.lsp_dynamic_workspace_symbols,
-            { desc = "[S]ymbols (entire workspace)" })
+          vim.keymap.set("n", "<leader>cS", builtin.lsp_dynamic_workspace_symbols, { desc = "[S]ymbols (entire workspace)" })
 
           -- code actions
           vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[r]ename" })
