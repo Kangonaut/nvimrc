@@ -13,7 +13,7 @@ return {
   cmd = "Neotree",
   keys = {
     -- NOTE: toggle the neo-tree window using backslash "\"
-    { "\\", ":Neotree reveal<CR>", { desc = "NeoTree reveal" } },
+    { "\\", ":Neotree toggle<CR>", { desc = "NeoTree toggle" } },
   },
   opts = {
     filesystem = {
