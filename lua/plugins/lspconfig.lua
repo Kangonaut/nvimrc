@@ -9,6 +9,9 @@ local servers = {
       },
     },
   },
+
+  -- Python
+  pyright = {},
 }
 
 local tools = {
