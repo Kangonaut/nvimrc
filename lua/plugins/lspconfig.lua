@@ -109,7 +109,8 @@ return {
 
           -- symbols
           vim.keymap.set("n", "<leader>cs", builtin.lsp_document_symbols, { desc = "[s]ymbols (current buffer)" })
-          vim.keymap.set("n", "<leader>cS", builtin.lsp_dynamic_workspace_symbols, { desc = "[S]ymbols (entire workspace)" })
+          vim.keymap.set("n", "<leader>cS", builtin.lsp_dynamic_workspace_symbols,
+            { desc = "[S]ymbols (entire workspace)" })
 
           -- code actions
           vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "[r]ename" })
