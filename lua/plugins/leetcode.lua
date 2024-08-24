@@ -27,6 +27,9 @@ return {
     ---@type lc.lang
     lang = "python3",
 
+    ---@type boolean
+    image_support = true,
+
     keys = {
       ---@type string
       reset_testcases = "R",
